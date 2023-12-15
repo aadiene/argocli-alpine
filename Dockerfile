@@ -1,6 +1,6 @@
-FROM argoproj/argocli:latest as argocli
+FROM argoproj/argocli:v3.5.2 as argocli
 
-FROM alpine:latest
+FROM alpine:3.19.0
 
 COPY --from=argocli /etc/ssh/ssh_known_hosts /etc/ssh/
 COPY --from=argocli /etc/nsswitch.conf /etc/
